@@ -13,16 +13,7 @@ app.use(bodyParser.json());
 
 // console.log(process.env.MONGO_URI)
 const mongo_uri=process.env.MONGO_URI
-mongoose.connect(mongo_uri, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-}).then(() => {
-  console.log('Connected to MongoDB Atlas');
-})
-.catch((err) => {
-  console.error('MongoDB connection error:', err);
-  process.exit(1);
-});
+mongoose.connect(mongo_uri)
 
 const Entry = require('./models/Entry');
 
